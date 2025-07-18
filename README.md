@@ -8,8 +8,8 @@ To establish a global standard for carbon credit verification by:
 - Providing tamper-proof records of carbon offset projects
 - Enabling transparent trading of carbon credits
 - Incentivizing sustainable business practices
-- Creating auditable environmental impact reports
-
+- Creating auditable environmental impact reports  
+  
 ## Key Features
 - ERC-20 token representing carbon credits
 - Role-based verification system

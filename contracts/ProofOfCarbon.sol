@@ -1,7 +1,6 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.17;
 
-
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/AccessControl.sol";
 
@@ -24,6 +23,7 @@ contract ProofOfCarbon is ERC20, AccessControl {
         _mint(msg.sender, INITIAL_SUPPLY);
         _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
     }
+
 
     function verifyCarbonCredit(
         address recipient,
@@ -55,6 +55,7 @@ contract ProofOfCarbon is ERC20, AccessControl {
             }
         }
     }
+
 
     function addVerifier(address account) external onlyRole(DEFAULT_ADMIN_ROLE) {
         grantRole(VERIFIER_ROLE, account);

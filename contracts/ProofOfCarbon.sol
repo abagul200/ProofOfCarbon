@@ -15,7 +15,6 @@ contract ProofOfCarbon is ERC20, AccessControl {
         address verifiedBy;
     }
 
-
     mapping(address => CarbonCredit[]) public credits;
     mapping(string => bool) public usedProjectIds;
 

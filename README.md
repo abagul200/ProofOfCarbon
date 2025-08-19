@@ -23,7 +23,7 @@ To establish a global standard for carbon credit verification by:
 - Develop carbon credit marketplace
 - Implement cross-chain compatibility
 - Add staking mechanisms for long-term holders
-- Create DAO for governance decisions
+- Create DAO for governance decisions 
    
 ## Contract Details  
 0x879D2eFF611eB227bd910c8Ae760135171f3c841   

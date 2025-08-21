@@ -1,6 +1,5 @@
 const hre = require("hardhat");
 
- 
 async function main() {
   const ProofOfCarbon = await hre.ethers.getContractFactory("ProofOfCarbon");
   const proofOfCarbon = await ProofOfCarbon.deploy();

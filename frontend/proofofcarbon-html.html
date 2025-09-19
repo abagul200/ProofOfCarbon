@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProofOfCarbon - Decentralized Carbon Credits</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/4.1.1/web3.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🌱 ProofOfCarbon</h1>
+            <p>Blockchain-Verified Carbon Credits</p>
+            <div class="wallet-section">
+                <button id="connectWallet" class="btn btn-primary">Connect Wallet</button>
+                <div id="walletInfo" class="wallet-info hidden">
+                    <span id="walletAddress"></span>
+                    <span id="carbonBalance">0 Carbon Credits</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Contract Stats Section -->
+        <section class="stats-section">
+            <h2>📊 Platform Statistics</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Total Carbon Credits</h3>
+                    <p id="totalCredits">Loading...</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Current Price</h3>
+                    <p id="currentPrice">Loading...</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Your Balance</h3>
+                    <p id="userBalance">0 Credits</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Functions Section -->
+        <section class="functions-section">
+            <div class="function-grid">
+                <!-- Mint Carbon Credits -->
+                <div class="function-card">
+                    <h3>🏭 Mint Carbon Credits</h3>
+                    <p>Create verified carbon credits for environmental projects</p>
+                    <form id="mintForm">
+                        <input type="number" id="mintAmount" placeholder="Amount of credits" required>
+                        <input type="text" id="projectName" placeholder="Project name" required>
+                        <textarea id="projectDescription" placeholder="Project description" rows="3"></textarea>
+                        <button type="submit" class="btn btn-success">Mint Credits</button>
+                    </form>
+                </div>
+
+                <!-- Buy Carbon Credits -->
+                <div class="function-card">
+                    <h3>💰 Buy Carbon Credits</h3>
+                    <p>Purchase carbon credits from other users</p>
+                    <form id="buyForm">
+                        <input type="text" id="sellerAddress" placeholder="Seller wallet address" required>
+                        <input type="number" id="buyAmount" placeholder="Amount to buy" required>
+                        <div class="price-info">
+                            <span>Total Cost: <span id="totalCost">0 ETH</span></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Buy Credits</button>
+                    </form>
+                </div>
+
+                <!-- Check Balance -->
+                <div class="function-card">
+                    <h3>🔍 Check Balance</h3>
+                    <p>View carbon credit balance of any address</p>
+                    <form id="balanceForm">
+                        <input type="text" id="balanceAddress" placeholder="Wallet address" required>
+                        <button type="submit" class="btn btn-info">Check Balance</button>
+                    </form>
+                    <div id="balanceResult" class="result hidden">
+                        <p>Balance: <span id="balanceAmount">0</span> Carbon Credits</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recent Transactions -->
+        <section class="transactions-section">
+            <h2>📈 Recent Activity</h2>
+            <div id="transactionsList" class="transactions-list">
+                <p class="no-transactions">No recent transactions. Connect your wallet to view activity.</p>
+            </div>
+        </section>
+
+        <!-- User Credits -->
+        <section class="user-credits-section">
+            <h2>🎖️ Your Carbon Credits</h2>
+            <div id="userCreditsList" class="credits-list">
+                <p class="no-credits">Connect your wallet to view your carbon credits.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 ProofOfCarbon. Building a sustainable future with blockchain technology.</p>
+        </div>
+    </footer>
+
+    <!-- Loading Modal -->
+    <div id="loadingModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="loader"></div>
+            <p>Processing transaction...</p>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal hidden">
+        <div class="modal-content success">
+            <h3>✅ Success!</h3>
+            <p id="successMessage">Transaction completed successfully.</p>
+            <button onclick="closeModal('successModal')" class="btn btn-primary">Close</button>
+        </div>
+    </div>
+
+    <!-- Error Modal -->
+    <div id="errorModal" class="modal hidden">
+        <div class="modal-content error">
+            <h3>❌ Error</h3>
+            <p id="errorMessage">An error occurred.</p>
+            <button onclick="closeModal('errorModal')" class="btn btn-secondary">Close</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

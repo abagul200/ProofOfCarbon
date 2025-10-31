@@ -2,7 +2,7 @@
    
 ## Project Description
 ProofOfCarbon is a blockchain-based carbon credit verification and tokenization platform that brings transparency to environmental sustainability efforts. It creates an immutable record of carbon offset projects and issues tradable tokens representing verified carbon credits.
-
+ 
 ## Project Vision
 To establish a global standard for carbon credit verification by:
 - Providing tamper-proof records of carbon offset projects
